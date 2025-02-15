@@ -3,14 +3,16 @@ from flask_cors import CORS
 from google import genai
 from datetime import datetime, timedelta
 import pytz
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
-CORS(app)  # This will enable CORS for all routes
+CORS(app)
 
-# Initialize the genai client
-client = genai.Client(api_key="AIzaSyD8jRXMiKcbl5OQ1FTrw8H_U00H_l8mthw")
+client = genai.Client(api_key=os.getenv("API_KEY"))
 
-# Function to generate subtasks from AI
 def generate_subtasks(task_name):
     response = client.models.generate_content(
         model="gemini-2.0-flash", 
@@ -28,7 +30,7 @@ def generate_subtasks(task_name):
                 subtasks.append((subtask_name, time_estimate))
                 plan_text += f"{subtask_name} - {time_estimate}\n"
     return plan_text, subtasks
-# Endpoint to receive task name and generate the plan
+
 @app.route('/generate_tasks', methods=['POST'])
 def generate_tasks():
     data = request.json
@@ -41,20 +43,16 @@ def generate_tasks():
         "subtasks": subtasks
     })
 
-# Function to simulate adding tasks to the calendar
 def add_to_calendar(subtasks):
-    start_time = datetime.now(pytz.utc)  # Start from the current time
+    start_time = datetime.now(pytz.utc)
     for subtask, time_estimate in subtasks:
-        # Convert time estimate to timedelta (assuming time_estimate is in hours)
         hours = int(time_estimate.split()[0])
         end_time = start_time + timedelta(hours=hours)
 
-        # Print to simulate adding to calendar (this can be replaced with actual calendar API)
         print(f"Adding to calendar: {subtask} from {start_time} to {end_time}")
 
         start_time = end_time
 
-# Endpoint to add subtasks to the calendar (called from the frontend if accepted)
 @app.route('/add_to_calendar', methods=['POST'])
 def add_to_calendar_endpoint():
     data = request.json
