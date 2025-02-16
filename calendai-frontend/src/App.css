@@ -1,15 +1,13 @@
 /* App.css */
 :root {
-  --primary-color: #2563eb; /* Modern blue */
-  --secondary-color: #16a34a; /* Professional green */
-  --accent-color: #7c3aed; /* Purple accent */
-  --background-color: #f8fafc; /* Light gray background */
+  --primary-color: #000000; /* Black */
+  --secondary-color: #ff69b4; /* Pink */
+  --accent-color: #ffffff; /* White */
+  --background-color: #000000; /* Light gray background */
   --card-bg: #ffffff; /* White */
-  --text-primary: #1e293b; /* Dark blue-gray */
+  --text-primary: #000000; /* Black */
   --text-secondary: #64748b; /* Medium blue-gray */
   --error-color: #dc2626; /* Red */
-  --success-color: #16a34a; /* Green */
-  --warning-color: #eab308; /* Yellow */
   --border-color: #e2e8f0; /* Light gray border */
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
@@ -25,18 +23,107 @@ body {
 
 .app-container {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  padding: 2rem;
-  gap: 2rem;
   background-color: var(--background-color);
 }
 
-/* Left Panel Styles */
-.left-panel {
-  width: 350px;
+.app-header {
+  background: var(--primary-color);
+  color: var(--accent-color);
+  text-align: center;
+  padding: 2rem 0;
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.logo {
+  width: 300px;
+  position: relative;
+}
+
+.product-name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.left-panel,
+.right-panel {
+  width: 300px;
+  background: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.center-panel {
+  flex: 2;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.app-footer {
+  background: var(--primary-color);
+  color: var(--accent-color);
+  text-align: center;
+  padding: 1rem 0;
+  box-shadow: var(--shadow-md);
+}
+
+.search-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  background: var(--card-bg);
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.1);
+}
+
+.search-button {
+  padding: 1rem 2rem;
+  background: var(--secondary-color);
+  color: var(--accent-color);
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.search-button:hover {
+  background: #ff1493;
+  transform: translateY(-1px);
 }
 
 .calendar-section {
@@ -107,57 +194,12 @@ body {
   margin-top: 0.5rem;
 }
 
-/* Center Panel Styles */
-.center-panel {
-  flex: 2;
-  display: flex;
-  flex-direction: column;
-}
-
 .main-heading {
   color: var(--text-primary);
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
   margin-bottom: 2.5rem;
-}
-
-.search-container {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.search-input {
-  flex: 1;
-  padding: 1rem 1.5rem;
-  font-size: 1rem;
-  border: 2px solid var(--border-color);
-  border-radius: 12px;
-  background: var(--card-bg);
-  transition: all 0.2s ease;
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: var(--primary-color);
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-}
-
-.search-button {
-  padding: 1rem 2rem;
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.search-button:hover {
-  background: #1d4ed8;
-  transform: translateY(-1px);
 }
 
 .subtasks-container {
@@ -190,7 +232,7 @@ body {
 }
 
 .add-all-button:hover {
-  background: #15803d;
+  background: #ff1493;
   transform: translateY(-1px);
 }
 
@@ -235,26 +277,8 @@ body {
 }
 
 .calendar-button:hover {
-  background: #1d4ed8;
+  background: #333333;
   transform: translateY(-1px);
-}
-
-/* Right Panel Styles */
-.right-panel {
-  width: 300px;
-  background: var(--card-bg);
-  padding: 1.5rem;
-  border-radius: 16px;
-  box-shadow: var(--shadow-md);
-}
-
-.right-panel h3 {
-  color: var(--text-primary);
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 2px solid var(--border-color);
 }
 
 .all-task-item {
@@ -267,7 +291,7 @@ body {
 }
 
 .all-task-item:hover {
-  background: rgba(37, 99, 235, 0.05);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .task-number {
@@ -287,7 +311,6 @@ body {
   font-size: 0.9rem;
 }
 
-/* DateTime Picker Modal Styles */
 .datetime-picker-modal {
   position: fixed;
   top: 0;
@@ -342,7 +365,7 @@ body {
 }
 
 .confirm-btn:hover {
-  background: #1d4ed8;
+  background: #333333;
 }
 
 .cancel-btn {
@@ -356,32 +379,8 @@ body {
   color: white;
 }
 
-/* Check Reminders Button */
-.check-reminders-btn {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  padding: 1rem 2rem;
-  background: var(--accent-color);
-  color: white;
-  border: none;
-  border-radius: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: var(--shadow-md);
-  z-index: 1000;
-}
-
-.check-reminders-btn:hover {
-  background: #6d28d9;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
-
-/* Responsive Design */
 @media (max-width: 1200px) {
-  .app-container {
+  .content {
     flex-direction: column;
     padding: 1rem;
   }
