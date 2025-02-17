@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/StepWise/static/css/main.96b7cbf5.chunk.css",
+    "main.js": "/StepWise/static/js/main.45389bb7.chunk.js",
+    "main.js.map": "/StepWise/static/js/main.45389bb7.chunk.js.map",
+    "runtime~main.js": "/StepWise/static/js/runtime~main.39820641.js",
+    "runtime~main.js.map": "/StepWise/static/js/runtime~main.39820641.js.map",
+    "static/css/2.a3b508c3.chunk.css": "/StepWise/static/css/2.a3b508c3.chunk.css",
+    "static/js/2.8494dd82.chunk.js": "/StepWise/static/js/2.8494dd82.chunk.js",
+    "static/js/2.8494dd82.chunk.js.map": "/StepWise/static/js/2.8494dd82.chunk.js.map",
+    "index.html": "/StepWise/index.html",
+    "precache-manifest.c8951df0034e33603fd9efb47544f262.js": "/StepWise/precache-manifest.c8951df0034e33603fd9efb47544f262.js",
+    "service-worker.js": "/StepWise/service-worker.js",
+    "static/css/2.a3b508c3.chunk.css.map": "/StepWise/static/css/2.a3b508c3.chunk.css.map",
+    "static/css/main.96b7cbf5.chunk.css.map": "/StepWise/static/css/main.96b7cbf5.chunk.css.map",
+    "static/media/logo.png": "/StepWise/static/media/logo.bfb9d52c.png"
+  }
+}
