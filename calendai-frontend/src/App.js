@@ -6,7 +6,7 @@ import moment from "moment";
 import "react-calendar/dist/Calendar.css";
 import "react-datetime/css/react-datetime.css";
 import "./App.css";
-import logo from "./logo.png"; // Ensure the logo is in the src folder
+import logo from "./logo.png";
 
 function App() {
   const [taskName, setTaskName] = useState("");
@@ -126,11 +126,14 @@ function App() {
         return;
       }
       try {
-        const response = await fetch("http://127.0.0.1:5000/generate_tasks", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ task_name: taskName }),
-        });
+        const response = await fetch(
+          "https://stepwise.onrender.com/generate_tasks",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ task_name: taskName }),
+          }
+        );
 
         if (response.ok) {
           const data = await response.json();
