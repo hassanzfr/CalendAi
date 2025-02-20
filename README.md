@@ -1,6 +1,5 @@
 # StepWise 🧠
 
 # Members
-Jalees Ahmed
-[Hassan Zafar](https://github.com/hassanzfr)
+Jalees Ahmed & [Hassan Zafar](https://github.com/hassanzfr)
 
